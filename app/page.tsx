@@ -6,10 +6,10 @@ import Link from "next/link"
 
 export default function Home() {
   const videos = [
-    { src: "/video5.mp4", title: "QUIZ COLEÇÃO 2025", vimeoUrl: "https://player.vimeo.com/video/1067753081" },
-    { src: "/video6.mp4", title: "BAHRÔ STUDIO", vimeoUrl: "https://player.vimeo.com/video/1047559604" },
-    { src: "/video3.mp4", title: "REINEHR - LABIRINTO", vimeoUrl: "https://player.vimeo.com/video/1033533951" },
-    { src: "/video7.mp4", title: "BAHRÔ STUDIO - TRANSFORMANDO BARRO EM ARTE.", vimeoUrl: "https://player.vimeo.com/video/1047485130" },
+    { src: "/video1.mp4", title: "QUIZ COLEÇÃO 2025", vimeoUrl: "https://player.vimeo.com/video/1067753081" },
+    { src: "/video2.mp4", title: "BAHRÔ STUDIO", vimeoUrl: "https://player.vimeo.com/video/1047559604" },
+    { src: "/video4.mp4", title: "REINEHR - LABIRINTO", vimeoUrl: "https://player.vimeo.com/video/1033533951" },
+    { src: "/video3.mp4", title: "BAHRÔ STUDIO - TRANSFORMANDO BARRO EM ARTE.", vimeoUrl: "https://player.vimeo.com/video/1047485130" },
     
 
     // Adicione mais vídeos conforme necessário
