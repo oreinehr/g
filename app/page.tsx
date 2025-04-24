@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "./footer/page";
+import Footer from "./Footer/page";
 
 export default function Home() {
   const videos = [
