@@ -15,12 +15,12 @@ export default function Home() {
     {
       src: "/video2.mp4",
       title: "REINEHR - LABIRINTO",
-      vimeoUrl: "https://player.vimeo.com/video/1047559604",
+      vimeoUrl: "https://player.vimeo.com/video/1033533951",
     },
     {
       src: "/video4.mp4",
       title: "BAHRÔ STUDIO",
-      vimeoUrl: "https://player.vimeo.com/video/1033533951",
+      vimeoUrl: "https://player.vimeo.com/video/1047559604",
     },
     {
       src: "/video3.mp4",

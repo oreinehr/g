@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"
 import { FaInstagram, FaVimeoV, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Footer from "../Footer/page";
@@ -8,24 +9,14 @@ export default function Contact() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="flex justify-between items-center p-6">
-        <div className="logo">
-          <Link href="/">
-            <svg
-              width="50"
-              height="30"
-              viewBox="0 0 50 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M15 5L25 25L35 5" stroke="white" strokeWidth="2" />
-            </svg>
-          </Link>
-        </div>
-        <div className="flex gap-8">
-          <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
-          <Link href="/about" className="hover:text-gray-300 transition-colors">Sobre</Link>
-          <Link href="/contact" className="hover:text-gray-300 transition-colors">Contato</Link>
+      <nav className="py-4 px-6 flex justify-between items-center">
+        <Link href="/">
+          <Image src="/Prancheta 1_2.png" alt="Logo" width={60} height={60} />
+        </Link>
+        <div className="flex gap-8 text-lg">
+          <Link href="/" className="hover:text-gray-300">Home</Link>
+          <Link href="/about" className="hover:text-gray-300">Sobre</Link>
+          <Link href="/contact" className="hover:text-gray-300">Contato</Link>
         </div>
       </nav>
 
