@@ -1,5 +1,5 @@
-import Link from "next/link"
-import VimeoEmbed from "@/components/vimeo-embed"
+import Link from "next/link";
+import VimeoEmbed from "@/components/vimeo-embed";
 
 export default function Projects() {
   const projects = [
@@ -9,7 +9,7 @@ export default function Projects() {
     { id: "162427937", title: "Documentary" },
     { id: "370984351", title: "Corporate Video" },
     { id: "113716040", title: "Event Coverage" },
-  ]
+  ];
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -29,7 +29,10 @@ export default function Projects() {
           <Link href="/about" className="hover:text-gray-300 transition-colors">
             About
           </Link>
-          <Link href="/contact" className="hover:text-gray-300 transition-colors">
+          <Link
+            href="/contact"
+            className="hover:text-gray-300 transition-colors"
+          >
             Contact
           </Link>
         </div>
@@ -38,9 +41,13 @@ export default function Projects() {
       {/* Grid de Projetos */}
       <section className="grid grid-cols-2 md:grid-cols-3 gap-[2px] p-4">
         {projects.map((project) => (
-          <VimeoEmbed key={project.id} videoId={project.id} title={project.title} />
+          <VimeoEmbed
+            key={project.id}
+            videoId={project.id}
+            title={project.title}
+          />
         ))}
       </section>
     </main>
-  )
+  );
 }

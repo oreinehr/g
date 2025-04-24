@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Contact() {
   return (
@@ -7,7 +7,13 @@ export default function Contact() {
       <nav className="flex justify-between items-center p-6">
         <div className="logo">
           <Link href="/">
-            <svg width="50" height="30" viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              width="50"
+              height="30"
+              viewBox="0 0 50 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M15 5L25 25L35 5" stroke="white" strokeWidth="2" />
             </svg>
           </Link>
@@ -19,7 +25,10 @@ export default function Contact() {
           <Link href="/about" className="hover:text-gray-300 transition-colors">
             About
           </Link>
-          <Link href="/contact" className="hover:text-gray-300 transition-colors">
+          <Link
+            href="/contact"
+            className="hover:text-gray-300 transition-colors"
+          >
             Contact
           </Link>
         </div>
@@ -34,7 +43,10 @@ export default function Contact() {
           <div className="space-y-4">
             <div>
               <h2 className="text-2xl font-semibold mb-2">Email</h2>
-              <a href="mailto:contact@gustavoreinhehr.com" className="text-lg hover:underline">
+              <a
+                href="mailto:contact@gustavoreinhehr.com"
+                className="text-lg hover:underline"
+              >
                 gustavo@gustavo.com
               </a>
             </div>
@@ -62,5 +74,5 @@ export default function Contact() {
         </div>
       </section>
     </main>
-  )
+  );
 }

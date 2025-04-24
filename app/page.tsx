@@ -1,39 +1,54 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const videos = [
-    { src: "/video1.mp4", title: "QUIZ COLEÇÃO 2025", vimeoUrl: "https://player.vimeo.com/video/1067753081" },
-    { src: "/video2.mp4", title: "BAHRÔ STUDIO", vimeoUrl: "https://player.vimeo.com/video/1047559604" },
-    { src: "/video4.mp4", title: "REINEHR - LABIRINTO", vimeoUrl: "https://player.vimeo.com/video/1033533951" },
-    { src: "/video3.mp4", title: "BAHRÔ STUDIO - TRANSFORMANDO BARRO EM ARTE.", vimeoUrl: "https://player.vimeo.com/video/1047485130" },
-    
+    {
+      src: "/video1.mp4",
+      title: "QUIZ COLEÇÃO 2025",
+      vimeoUrl: "https://player.vimeo.com/video/1067753081",
+    },
+    {
+      src: "/video2.mp4",
+      title: "REINEHR - LABIRINTO",
+      vimeoUrl: "https://player.vimeo.com/video/1047559604",
+    },
+    {
+      src: "/video4.mp4",
+      title: "BAHRÔ STUDIO",
+      vimeoUrl: "https://player.vimeo.com/video/1033533951",
+    },
+    {
+      src: "/video3.mp4",
+      title: "BAHRÔ STUDIO - TRANSFORMANDO BARRO EM ARTE.",
+      vimeoUrl: "https://player.vimeo.com/video/1047485130",
+    },
 
     // Adicione mais vídeos conforme necessário
-  ]
+  ];
 
-  const videoRefs = useRef([])
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedVideoUrl, setSelectedVideoUrl] = useState("")
+  const videoRefs = useRef([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState("");
 
   useEffect(() => {
-    videoRefs.current.forEach(video => {
-      if (video) video.playbackRate = 1.2
-    })
-  }, [])
+    videoRefs.current.forEach((video) => {
+      if (video) video.playbackRate = 1.2;
+    });
+  }, []);
 
   const handleVideoClick = (url) => {
-    setSelectedVideoUrl(url)
-    setIsModalOpen(true)
-  }
+    setSelectedVideoUrl(url);
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedVideoUrl("")
-  }
+    setIsModalOpen(false);
+    setSelectedVideoUrl("");
+  };
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -43,9 +58,15 @@ export default function Home() {
           <Image src="/Prancheta 1_2.png" alt="Logo" width={60} height={60} />
         </Link>
         <div className="flex gap-8 text-lg">
-          <Link href="/" className="hover:text-gray-300">Home</Link>
-          <Link href="/about" className="hover:text-gray-300">About</Link>
-          <Link href="/contact" className="hover:text-gray-300">Contact</Link>
+          <Link href="/" className="hover:text-gray-300">
+            Home
+          </Link>
+          <Link href="/about" className="hover:text-gray-300">
+            About
+          </Link>
+          <Link href="/contact" className="hover:text-gray-300">
+            Contact
+          </Link>
         </div>
       </nav>
 
@@ -74,8 +95,9 @@ export default function Home() {
               className="absolute inset-0 z-10 cursor-pointer"
               onClick={() => handleVideoClick(video.vimeoUrl)}
             />
+
             <video
-              ref={el => (videoRefs.current[i] = el)}
+              ref={(el) => (videoRefs.current[i] = el)}
               src={video.src}
               autoPlay
               muted
@@ -84,6 +106,7 @@ export default function Home() {
               preload="auto"
               className="w-full h-full object-cover"
             />
+
             <div
               className="
                 absolute bottom-2 left-2
@@ -122,5 +145,5 @@ export default function Home() {
         </div>
       )}
     </main>
-  )
+  );
 }

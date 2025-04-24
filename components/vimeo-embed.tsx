@@ -1,4 +1,10 @@
-export default function VimeoEmbed({ videoId, title }: { videoId: string, title: string }) {
+export default function VimeoEmbed({
+  videoId,
+  title,
+}: {
+  videoId: string;
+  title: string;
+}) {
   return (
     <div className="video-wrapper">
       <iframe
@@ -11,5 +17,5 @@ export default function VimeoEmbed({ videoId, title }: { videoId: string, title:
         title={title}
       ></iframe>
     </div>
-  )
+  );
 }

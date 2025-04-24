@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import Masonry from "react-masonry-css"
-import VimeoEmbed from "../components/vimeo-embed"
-import './VideoGrid.css'
+import Masonry from "react-masonry-css";
+import VimeoEmbed from "../components/vimeo-embed";
+import "./VideoGrid.css";
 
 export default function VideoGrid({ videos }: { videos: any[] }) {
   const breakpointColumnsObj = {
@@ -10,8 +10,7 @@ export default function VideoGrid({ videos }: { videos: any[] }) {
     1024: 2,
     768: 2,
     480: 1, // só 1 no mobile
-  }
-  
+  };
 
   return (
     <section className="video-wrap">
@@ -30,5 +29,5 @@ export default function VideoGrid({ videos }: { videos: any[] }) {
         ))}
       </Masonry>
     </section>
-  )
+  );
 }
