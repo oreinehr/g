@@ -1,36 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
+import Footer from "../Footer/page";
+
+
 
 export default function About() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="flex justify-between items-center p-6">
-        <div className="logo">
-          <Link href="/">
-            <svg
-              width="50"
-              height="30"
-              viewBox="0 0 50 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M15 5L25 25L35 5" stroke="white" strokeWidth="2" />
-            </svg>
-          </Link>
-        </div>
-        <div className="flex gap-8">
-          <Link href="/" className="hover:text-gray-300 transition-colors">
-            Home
-          </Link>
-          <Link href="/about" className="hover:text-gray-300 transition-colors">
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="hover:text-gray-300 transition-colors"
-          >
-            Contact
-          </Link>
+      <nav className="py-4 px-6 flex justify-between items-center">
+        <Link href="/">
+          <Image src="/Prancheta 1_2.png" alt="Logo" width={60} height={60} />
+        </Link>
+        <div className="flex gap-8 text-lg">
+          <Link href="/" className="hover:text-gray-300">Home</Link>
+          <Link href="/about" className="hover:text-gray-300">Sobre</Link>
+          <Link href="/contact" className="hover:text-gray-300">Contato</Link>
         </div>
       </nav>
 
@@ -39,25 +24,21 @@ export default function About() {
         <h1 className="text-5xl font-bold mb-12">About</h1>
         <div className="space-y-6 text-lg">
           <p>
-            Gustavo Reinehr is a skilled film and content editor with years of
-            experience in the industry. Specializing in narrative storytelling
-            and visual aesthetics, Gustavo brings a unique perspective to every
-            project.
+          Gustavo Reinehr é um editor de vídeos experiente e versátil, 
+          com anos de atuação no mercado. Especializado em storytelling e 
+          estética visual, ele imprime uma identidade única em cada projeto.
+
+
           </p>
           <p>
-            With expertise in various editing software including Adobe Premiere
-            Pro, Final Cut Pro, and DaVinci Resolve, Gustavo delivers
-            high-quality content that engages audiences and conveys powerful
-            messages.
+          Com domínio de ferramentas como Adobe Premiere Pro, Gustavo produz conteúdos de alta qualidade que prendem a atenção do público e transmitem mensagens com clareza e impacto.
           </p>
           <p>
-            Throughout his career, Gustavo has worked with a diverse range of
-            clients from independent filmmakers to corporate brands, helping
-            them achieve their creative vision through meticulous editing and
-            content creation.
+          Ao longo de sua carreira, colaborou com uma variedade de clientes — de criadores independentes a marcas e empresas — contribuindo para transformar ideias em vídeos envolventes e profissionais, sempre com atenção aos detalhes e foco nos objetivos de comunicação.
           </p>
         </div>
       </section>
+        <Footer />
     </main>
   );
 }

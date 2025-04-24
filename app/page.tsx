@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "./footer/page";
 
 export default function Home() {
   const videos = [
@@ -26,8 +27,16 @@ export default function Home() {
       title: "BAHRÔ STUDIO - TRANSFORMANDO BARRO EM ARTE.",
       vimeoUrl: "https://player.vimeo.com/video/1047485130",
     },
-
-    // Adicione mais vídeos conforme necessário
+    {
+      src: "/video5.mp4",
+      title: "MARCIANO SCHMITZ: PINTOR, DESENHISTA E ESCULTOR.",
+      vimeoUrl: "https://vimeo.com/1044495137",
+    },
+    {
+      src: "/video6.mp4",
+      title: "UNIFERTIL - VALORES QUE ALIMENTAM",
+      vimeoUrl: "https://vimeo.com/1040199452",
+    },
   ];
 
   const videoRefs = useRef([]);
@@ -36,7 +45,7 @@ export default function Home() {
 
   useEffect(() => {
     videoRefs.current.forEach((video) => {
-      if (video) video.playbackRate = 1.2;
+      if (video) video.playbackRate = 1.5;
     });
   }, []);
 
@@ -58,15 +67,9 @@ export default function Home() {
           <Image src="/Prancheta 1_2.png" alt="Logo" width={60} height={60} />
         </Link>
         <div className="flex gap-8 text-lg">
-          <Link href="/" className="hover:text-gray-300">
-            Home
-          </Link>
-          <Link href="/about" className="hover:text-gray-300">
-            About
-          </Link>
-          <Link href="/contact" className="hover:text-gray-300">
-            Contact
-          </Link>
+          <Link href="/" className="hover:text-gray-300">Home</Link>
+          <Link href="/about" className="hover:text-gray-300">Sobre</Link>
+          <Link href="/contact" className="hover:text-gray-300">Contato</Link>
         </div>
       </nav>
 
@@ -84,18 +87,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Grid de vídeos */}
-      <section className="w-screen h-100 grid grid-cols-2 md:grid-cols-2 gap-2">
+      {/* Mobile: Exibir vídeos um embaixo do outro (quadrados) */}
+      <section className="block md:hidden w-full px-4 mb-8">
         {videos.map((video, i) => (
-          <div
-            key={i}
-            className="group relative w-full h-full aspect-square overflow-hidden rounded-2xl"
-          >
+          <div key={i} className="group relative w-full aspect-square mb-8">
             <div
               className="absolute inset-0 z-10 cursor-pointer"
               onClick={() => handleVideoClick(video.vimeoUrl)}
             />
-
             <video
               ref={(el) => (videoRefs.current[i] = el)}
               src={video.src}
@@ -104,9 +103,8 @@ export default function Home() {
               loop
               playsInline
               preload="auto"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-xl"
             />
-
             <div
               className="
                 absolute bottom-2 left-2
@@ -122,7 +120,43 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Modal de Vídeo do Vimeo */}
+      {/* Desktop/tablet: Exibir vídeos em uma grade (quadrados) */}
+      <section className="hidden md:grid w-full grid-cols-2 gap-2 px-4 mb-8">
+        {videos.map((video, i) => (
+          <div
+            key={i}
+            className="group relative w-full aspect-square overflow-hidden rounded-2xl"
+          >
+            <div
+              className="absolute inset-0 z-10 cursor-pointer"
+              onClick={() => handleVideoClick(video.vimeoUrl)}
+            />
+            <video
+              ref={(el) => (videoRefs.current[i] = el)}
+              src={video.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover"
+            />
+            <div
+              className="
+                absolute bottom-2 left-2
+                opacity-0 group-hover:opacity-100
+                translate-y-4 group-hover:translate-y-0
+                transition-all duration-300 ease-in-out
+                bg-black bg-opacity-60 text-white px-3 py-1 rounded text-sm
+              "
+            >
+              {video.title}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Modal com vídeo do Vimeo */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
           <div className="relative w-11/12 md:w-3/4 h-3/4">
@@ -144,6 +178,20 @@ export default function Home() {
           </div>
         </div>
       )}
+            {/* Botão "See more" */}
+            <div className="w-full flex justify-center mb-16">
+        <a
+          href="https://vimeo.com/gustavoreinehr" // Substitua aqui se quiser outro link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-300 transition"
+        >
+          Ver mais
+        </a>
+        
+      </div>
+      <Footer />
     </main>
+  
   );
 }

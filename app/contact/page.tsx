@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
 
+import Link from "next/link";
+import { FaInstagram, FaVimeoV, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
+import Footer from "../Footer/page";
 export default function Contact() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -19,60 +23,72 @@ export default function Contact() {
           </Link>
         </div>
         <div className="flex gap-8">
-          <Link href="/" className="hover:text-gray-300 transition-colors">
-            Home
-          </Link>
-          <Link href="/about" className="hover:text-gray-300 transition-colors">
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="hover:text-gray-300 transition-colors"
-          >
-            Contact
-          </Link>
+          <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
+          <Link href="/about" className="hover:text-gray-300 transition-colors">Sobre</Link>
+          <Link href="/contact" className="hover:text-gray-300 transition-colors">Contato</Link>
         </div>
       </nav>
 
       {/* Contact Content */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h1 className="text-5xl font-bold mb-12">Contact</h1>
-        <div className="space-y-8">
-          <p className="text-xl">Lorem</p>
+      <section className="max-w-4xl mx-auto px-6 py-24 space-y-16">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl font-bold text-center"
+        >
+          Contato
+        </motion.h1>
 
-          <div className="space-y-4">
-            <div>
-              <h2 className="text-2xl font-semibold mb-2">Email</h2>
-              <a
-                href="mailto:contact@gustavoreinhehr.com"
-                className="text-lg hover:underline"
-              >
-                gustavo@gustavo.com
-              </a>
-            </div>
+        {/* Formulário de Contato */}
+        <motion.form 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="space-y-6 bg-gray-900 p-8 rounded-xl shadow-lg"
+        >
+          <div>
+            <label className="block text-lg mb-2">Nome</label>
+            <input type="text" className="w-full p-3 rounded bg-gray-800 text-white focus:outline-none" />
+          </div>
+          <div>
+            <label className="block text-lg mb-2">Email</label>
+            <input type="email" className="w-full p-3 rounded bg-gray-800 text-white focus:outline-none" />
+          </div>
+          <div>
+            <label className="block text-lg mb-2">Mensagem</label>
+            <textarea className="w-full p-3 rounded bg-gray-800 text-white h-32 resize-none focus:outline-none" />
+          </div>
+          <button className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-300 transition-colors">
+            Enviar Mensagem
+          </button>
+        </motion.form>
 
-            <div>
-              <h2 className="text-2xl font-semibold mb-2">Location</h2>
-              <p className="text-lg">Campo Bom, RS</p>
-            </div>
+        {/* Informações de Contato */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="space-y-8 text-lg"
+        >
+      
 
-            <div>
-              <h2 className="text-2xl font-semibold mb-2">Social</h2>
-              <div className="flex gap-4">
-                <a href="#" className="text-lg hover:underline">
-                  Instagram
-                </a>
-                <a href="#" className="text-lg hover:underline">
-                  Vimeo
-                </a>
-                <a href="#" className="text-lg hover:underline">
-                  LinkedIn
-                </a>
-              </div>
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Localização</h2>
+            <p>Campo Bom, RS</p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-2">Redes Sociais</h2>
+            <div className="flex gap-6 text-2xl">
+              <a href="https://www.instagram.com/gustavoreinehr/" className="hover:text-gray-400"><FaInstagram /></a>
+              <a href="https://vimeo.com/gustavoreinehr" className="hover:text-gray-400"><FaVimeoV /></a>
+    
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
+       <Footer />
     </main>
   );
 }
