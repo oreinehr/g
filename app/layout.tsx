@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Gustavo Reinehr | Film & Content Editor",
   description:
-    "Portfolio of Gustavo Reinehr, experienced film and content editor based in Orlando, FL.",
+    "Portfoliod de Gustavo Reinehr",
   generator: "v0.dev",
 };
 export default function RootLayout({
